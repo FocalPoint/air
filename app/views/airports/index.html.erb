@@ -1,0 +1,8 @@
+<h1>Our Airports</h1>
+
+<%= form_tag airports_url, :method => :get do %>
+<p>Enter City<%= text_field_tag :city, params[:city] %></p>
+<p><%= submit_tag "Search" %></p>
+<% end %>
+
+<%= render @airports %>

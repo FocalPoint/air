@@ -1,0 +1,17 @@
+<h1><%= @airport.code %> - <%= @airport.city %></h1>
+
+<%= image_tag "#{@airport.code.downcase}.gif" %>
+
+<p>Flights Departing from <%= @airport.city %></p>
+<ul>
+<% @airport.departing_flights.each do |flight| %>
+  <li><%= flight.number %> to <%= flight.arrival_airport.code %></li>
+<% end %>
+</ul>
+
+<p>Flights Arriving at <%= @airport.city %></p>
+<ul>
+<% @airport.arriving_flights.each do |flight| %>
+  <li><%= flight.number %> from <%= flight.departure_airport.code %></li>
+<% end %>
+</ul>
